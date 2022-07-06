@@ -12,18 +12,23 @@
 			<ion-title size="large">Weather Now</ion-title>
 		</ion-toolbar>
 	</ion-header>
-	<div id="container" class="ion-padding-top">
-		<h1 class="ion-60p">{{temp}} °C</h1>
-		<br/>
-		<div *ngFor="let w of weathers.weather">
-			<img src="http://openweathermap.org/img/wn/{{w.icon}}@2x.png" height="180 px" />
-			<br/>
-			<h1 class="ion-30p">
-				{{city}}
-				<br/>
-				<br/>
-				{{w.main}}(<small>{{w.description}}</small>)
-			</h1>
-		</div>
-	</div>
+	<ion-card id="container" class="ion-padding-top">
+		<ion-card-header>
+			<ion-card-title>
+				<h1><strong>{{city}}</strong></h1>
+			</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<div *ngFor="let w of weathers.weather">
+				<img src="http://openweathermap.org/img/wn/{{w.icon}}@2x.png" height="180 px" />
+				<h1>
+					{{temp}} °C
+				</h1>
+				<h7>
+					{{w.main}}(<span>{{w.description}}</span>)
+				</h7>
+			</div>
+		</ion-card-content>
+
+	</ion-card>
 </ion-content>

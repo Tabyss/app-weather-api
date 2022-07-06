@@ -19,7 +19,7 @@ export class Tab3Page {
     this.getFav();
   }
 
-	ionViewWillEnter() {
+	ionViewDidEnter() {
 		this.getFav();
 		
 	}
