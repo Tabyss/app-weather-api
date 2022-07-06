@@ -13,14 +13,31 @@
       <ion-title size="large">Weather forecast</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div id="container">
-    <h1 class="ion-60p">{{weather.temp}} °C</h1>
-    <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png"/>
-    <h1 class="ion-30p">
-      {{weather.main}} <small>({{weather.desc}})</small><br/>
-      <ion-icon name="calendar-outline"></ion-icon>
-      {{weather.date | date:'dd MMM yyyy - HH:mm'}}
-    </h1>
-    <ion-button (click)="save()">Favorite</ion-button> 
-  </div>
+  <ion-card class="ion-text-center">
+    <ion-row>
+      <ion-col size="4" >
+        <span>
+          <ion-icon name="calendar-outline"></ion-icon>
+          {{weather.date | date:'dd MMM yyyy - HH:mm'}}
+        </span>
+      </ion-col>
+      <ion-col size="5" class="ion-align-self-center">
+        <br/>
+        <h1>{{weather.temp}} °C</h1>
+        <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png"/>
+        <h1 class="ion-30p">
+          {{weather.main}}
+          <br/>
+          <small>({{weather.desc}})</small>
+          <br/>
+          <br/>
+        </h1>
+      </ion-col>
+      <ion-col size="3"class="ion-align-self-end ">
+        <ion-button class="fiv" (click)="save()">Favorite</ion-button>
+      </ion-col>
+    </ion-row>
+
+      
+  </ion-card>
 </ion-content>
